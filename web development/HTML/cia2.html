@@ -1,0 +1,41 @@
+<html> 
+
+<head> 
+<title>BMI Calculator</title> 
+
+<style> 
+input,button { margin: 10px; padding: 10px; font-size: 16px; } 
+</style> 
+
+</head> 
+
+<body> 
+
+  <h1>BMI Calculator</h1>
+
+    <form onsubmit="calculateBMI(event)">
+
+        <input type="number" id="weight" placeholder="Weight (kg)" required><br> 
+        <input type="number" id="height" placeholder="Height (m)" step="0.01" required><br> 
+
+        <button type="submit">Calculate</button> 
+        <button type="reset">Clear</button> 
+
+    </form> 
+    
+    <div id="result"></div> 
+
+    <script> 
+        function calculateBMI(event)  
+        { 
+            event.preventDefault(); 
+            const w = parseFloat(document.getElementById("weight").value); 
+            const h = parseFloat(document.getElementById("height").value); 
+            const bmi = (w / (h ** 2)).toFixed(2); 
+            const category = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Normal weight" : "Overweight"; 
+            document.getElementById("result").textContent = `Your BMI is ${bmi} (${category})`; 
+        } 
+    </script> 
+
+</body> 
+</html> 

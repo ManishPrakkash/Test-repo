@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.sidebar{
+    width:300px;
+    background-color: #ccc;
+    position: fixed;
+    top:0;
+    bottom:0;
+    left: 0;
+}

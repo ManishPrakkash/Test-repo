@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Boolean</title>
+    </head>
+    <body>
+        <script>
+            document.getElementById("boolean").innerHTML
+        </script>
+        <p id="boolean"></p>
+    </body>
+    
+
+</html>
