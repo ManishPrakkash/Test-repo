@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Prakkash - Professional Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.min.js" defer></script>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            overflow-x: hidden;
+        }
+
+        .abstract-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(ellipse at top left, rgba(0,0,0,0.05) 0%, transparent 70%),
+                radial-gradient(ellipse at bottom right, rgba(0,0,0,0.05) 0%, transparent 70%),
+                linear-gradient(45deg, 
+                    rgba(0,0,0,0.02) 0%, 
+                    rgba(0,0,0,0.05) 25%, 
+                    rgba(0,0,0,0.02) 50%, 
+                    rgba(0,0,0,0.05) 75%, 
+                    rgba(0,0,0,0.02) 100%
+                );
+            background-blend-mode: overlay;
+            opacity: 0.6;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #6b6a6a, #393939);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .abstract-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(0,0,0,0.02) 0px,
+                    rgba(0,0,0,0.02) 2px,
+                    transparent 2px,
+                    transparent 10px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    rgba(0,0,0,0.02) 0px,
+                    rgba(0,0,0,0.02) 2px,
+                    transparent 2px,
+                    transparent 10px
+                );
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .section-bg {
+            background-color: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+
+        }
+
+        .grayscale-img {
+            filter:grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .grayscale-img:hover {
+            filter:grayscale(0%);
+            transform:scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900 relative">
+    <div class="abstract-bg"></div>
+    <div class="abstract-overlay"></div>
+
+    <div x-data="{ mobileMenu: false }" class="container mx-auto px-4 relative z-10">
+        <!-- Navigation -->
+        <nav class="flex items-center justify-between flex-wrap bg-black bg-opacity-90 text-white p-6 rounded-b-lg shadow-lg">
+            <div class="flex items-center flex-shrink-0 mr-6">
+                <span class="font-bold text-2xl tracking-tight gradient-text">M a n i s h</span>
+            </div>
+            <div class="block lg:hidden">
+                <button @click="mobileMenu = !mobileMenu" class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-300">
+                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div :class="{'block': mobileMenu, 'hidden': !mobileMenu}" class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                <div class="text-sm lg:flex-grow">
+                    <a href="#about" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300 mr-4">About</a>
+                    <a href="#skills" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300 mr-4">Skills</a>
+                    <a href="#projects" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300 mr-4">Projects</a>
+                    <a href="#contact" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header style="background-image: url('/PORTFOLIO/AestheticBG2.jpg');" class="text-center py-20 section-bg rounded-lg shadow-md mt-6">
+            <img src="/PORTFOLIO/Snapchat-1689214013.jpg" alt="Profile" class="mx-auto rounded-full w-48 h-48 mb-6 object-cover grayscale-img">
+            <h1 class="text-4xl font-bold gradient-text mb-4">Manish Prakkash</h1>
+            <p class="text-xl text-gray-700">Web Developer | M E R N | Designer</p>
+        </header>
+
+        
+        <!-- About Section -->
+        <section style="background-image: url(/PORTFOLIO/AestheticBG3.jpg);" id="about" class="section-bg rounded-lg shadow-md p-8 mt-6 card-hover">
+            <h2 class="text-3xl font-bold text-center mb-6 gradient-text">About Me</h2>
+            <p class="text-gray-800 leading-relaxed">
+                A passionate creator blending technology and design. My journey is defined by innovative solutions, creative problem-solving, and a commitment to crafting exceptional digital experiences that push the boundaries of what's possible.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section  id="skills" class="mt-6">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div style="background-image: url(/PORTFOLIO/AestheticBG4.jpg);background-size: cover;" class="section-bg p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 gradient-text">Frontend</h3>
+                    <ul class="text-gray-800">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div style="background-image: url(/PORTFOLIO/AestheticBG4.jpg);background-size: cover;" class="section-bg p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 gradient-text">Backend</h3>
+                    <ul class="text-gray-800">
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>Express</li>
+                        <li>MongoDB</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div style="background-image: url(/PORTFOLIO/AestheticBG4.jpg);background-size: cover;" class="section-bg p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 gradient-text">Tools & Other</h3>
+                    <ul class="text-gray-800">
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                        <li>Figma</li>
+                        <li>Agile Methodologies</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mt-6">
+            <h2 class="text-3xl font-bold text-center mb-6 gradient-text">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="section-bg p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 gradient-text">Project 1</h3>
+                    <p class="text-gray-800 mb-4">A responsive web application built with React and Node.js</p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">View Code</a>
+                        <a href="#" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">Live Demo</a>
+                    </div>
+
+                </div>
+
+                <div class="section-bg p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 gradient-text">Project 2</h3>
+                    <p class="text-gray-800 mb-4">Machine learning data visualization dashboard</p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">View Code</a>
+                        <a href="#" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="section-bg p-6 rounded-lg shadow-md card-hover">
+                    <h3 class="text-xl font-semibold mb-4 gradient-text">Project 3</h3>
+                    <p class="text-gray-800 mb-4">E-commerce platform with payment integration</p>
+                  
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">View Code</a>
+                        <a href="#" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600">Live Demo</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section style="background-image: url(/PORTFOLIO/AestheticBG3.jpg);" id="contact" class="mt-6 section-bg rounded-lg shadow-md p-8 card-hover">
+            <h2 class="text-3xl font-bold text-center mb-6 gradient-text">Contact Me</h2>
+            <form  class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label class="block text-gray-800 text-sm font-bold mb-2" for="name">Name</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800" id="name" type="text" placeholder="Your Name">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-800 text-sm font-bold mb-2" for="email">Email</label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800" id="email" type="email" placeholder="Your Email">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-800 text-sm font-bold mb-2" for="message">Message</label>
+                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800 h-32" id="message" placeholder="Your Message"></textarea>
+                </div>
+                <div class="text-center">
+                    <button class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-6 bg-black bg-opacity-90 text-white text-center py-4 rounded-t-lg">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/manish-prakkash-03b3a931a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-white hover:text-gray-300">LinkedIn</a>
+                <a href="https://github.com/ManishPrakkash" class="text-white hover:text-gray-300">GitHub</a>
+                <a href="https://www.instagram.com/manishmellow/profilecard/?igsh=Z25pNHh0NnM5bDc2" class="text-white hover:text-gray-300">Instagram</a>
+            </div>
+            <p>&copy; 2024 manishprakkash@gmail.com All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
